@@ -21,3 +21,22 @@ Feature: Zara Login-SearchBox Tests
     Examples:
       | userEmail                           |  password     |
       | testuserbootcamp@gmail.com          |failedpasss    |
+
+
+  @positive
+  Scenario Outline:
+    When Click the searchBox button
+    And Click and sendKeys as "<productName>" on searcher
+    Then Check and verify search result "SONUÇLAR"
+    Examples:
+      | productName  |
+      | Canta        |
+
+  @negative
+  Scenario Outline:
+    When Click the searchBox button
+    And Click and sendKeys as "<productName>" on searcher
+    Then Check and verify no product search result "ARAMADA SONUÇ BULUNAMADI"
+    Examples:
+      | productName  |
+      | DASDASD123   |
