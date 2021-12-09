@@ -46,7 +46,7 @@ public class SearchboxTest {
         @FindBy(xpath = "//div[@class='search-products-view__results-count']/span[.='Sonuçlar']")
         public WebElement productResults;
 
-        @Then("Check and verify login result {string}")
+        @Then("Check and verify search result {string}")
         public void checkListedProducts(String productName) {
             String productsFoundText = helper.getText(productResults);
             Assert.assertTrue(productsFoundText.contains(productName));
@@ -60,4 +60,5 @@ public class SearchboxTest {
             String noFoundText = helper.getText(failedSearchResult);
             Assert.assertTrue(noFoundText.contains(noFound));
     }
+
     }
