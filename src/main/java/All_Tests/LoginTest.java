@@ -1,7 +1,7 @@
 package All_Tests;
 
 import Utils.HelperFunctions;
-import Constant.ChromeDriver;
+import Constant.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -22,7 +22,7 @@ public class LoginTest {
 
     @Given("Navigate to the website")
     public void navigateToWebsite() {
-        driver = ChromeDriver.setUp();
+        driver = Driver.setUp();
         driver.manage().window().maximize();
         driver.get("https://www.zara.com/tr/");
         wait = (WebDriver) new WebDriverWait(driver, 1000);

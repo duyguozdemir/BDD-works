@@ -1,6 +1,6 @@
 package Utils;
 
-import Constant.ChromeDriver;
+import Constant.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class HelperFunctions {
 
-    private WebDriver driver = ChromeDriver.setUp();
+    private WebDriver driver = Driver.setUp();
     WebDriverWait wait = new WebDriverWait(driver, 1000);
 
     public void sendKeysElement(WebElement sendElement, String value) {

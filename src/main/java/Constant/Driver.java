@@ -1,10 +1,11 @@
 package Constant;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
-public class ChromeDriver {
+public class Driver {
 
     private static WebDriver driver;
 
@@ -13,17 +14,17 @@ public class ChromeDriver {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--disable-notifications");
-            driver = new org.openqa.selenium.chrome.ChromeDriver(options);
+            driver = new ChromeDriver(options);
         }
         return driver;
     }
 
-    public void tearDown() {
+    public static void tearDown() {
         if (driver != null) {
             driver.quit();
             driver = null;
         }
     }
+    }
 
 
-}

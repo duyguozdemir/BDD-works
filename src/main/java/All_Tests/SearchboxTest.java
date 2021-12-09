@@ -1,7 +1,7 @@
 package All_Tests;
 
 import Utils.HelperFunctions;
-import Constant.ChromeDriver;
+import Constant.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
