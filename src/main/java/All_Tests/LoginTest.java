@@ -59,17 +59,16 @@ public class LoginTest {
 
     @Then("Check and verify login result {string}")
     public void verifyLoginResult(String userInfo) {
-        String productsFoundText = helper.getText(successLoginMessage);
-        Assert.assertTrue(productsFoundText.contains(userInfo));
+        String productsFounded = helper.getText(successLoginMessage);
+        Assert.assertTrue(productsFounded.contains(userInfo));
     }
-
     @FindBy(xpath ="//span[.='Geçerli bir e-posta adresi girin.']")
     public WebElement failedLoginMessage;
 
     @Then("Check and verify failed login result {string}")
     public void verifyFailedLoginResult(String noFound) {
-        String noFoundText = helper.getText(failedLoginMessage);
-        Assert.assertTrue(noFoundText.contains(noFound));
+        String productNoFound = helper.getText(failedLoginMessage);
+        Assert.assertTrue(productNoFound.contains(noFound));
     }
 
 }
